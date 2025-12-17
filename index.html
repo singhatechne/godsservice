@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gods Life Health Care - Our Medical Tourism Services</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-color': '#00a1ab',
+                        'primary-dark': '#008a93',
+                        'secondary-color': '#002c5f',
+                        'accent-color': '#ff6b6b',
+                        'success-color': '#51cf66',
+                        'text-dark': '#222222',
+                        'text-light': '#777777',
+                        'bg-light': '#fafafa',
+                        'bg-white': '#ffffff',
+                        'border-color': '#e0e0e0',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px rgba(0, 0, 0, 0.08)',
+                        'card-hover': '0 20px 40px rgba(0, 0, 0, 0.12)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Import main.css styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222222;
+            line-height: 1.6;
+            background-color: #fafafa;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Header styles from main.css */
+        .glass-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .glass-header.scrolled {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            padding: 2px 4px;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: #002c5f;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, #00a1ab, #008a93);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation styles */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+            flex-wrap: nowrap;
+        }
+
+        .nav-link {
+            color: #002c5f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 16px;
+            position: relative;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #00a1ab;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00a1ab;
+        }
+
+        .nav-link:hover::after {
+            width: 70%;
+        }
+
+        /* Active nav link */
+        .nav-link.active {
+            color: #00a1ab;
+        }
+
+        .nav-link.active::after {
+            width: 70%;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00a1ab 0%, #008a93 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 161, 171, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00a1ab;
+            color: #00a1ab;
+        }
+
+        .btn-outline:hover {
+            background: #00a1ab;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 161, 171, 0.3);
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, #00a1ab 0%, #008a93 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 161, 171, 0.4);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 6px 20px rgba(0, 161, 171, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 16px;
+        }
+
+        /* Language Selector Styles */
+        .language-selector-simple {
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .language-selector-simple select {
+            background: linear-gradient(135deg, #00a1ab 0%, #008a93 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 30px 8px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            min-width: 110px;
+        }
+
+        .language-selector-simple::after {
+            content: "▼";
+            font-size: 8px;
+            color: white;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        footer.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #3498db;
+        }
+
+        .footer-column p {
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+        /* Hero section adjustments */
+        .hero-section {
+            padding-top: 100px;
+        }
+
+        /* Service cards styles */
+        .service-card-medical {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .service-card-medical.animated-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .service-card-medical.animated-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .service-card-medical:hover {
+            box-shadow: 0 8px 25px rgba(0, 174, 239, 0.15);
+            transform: translateY(-5px);
+            border-color: #00a1ab;
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #00a1ab 0%, #008a93 100%);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        /* Section header with underline */
+        .section-header {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #002c5f;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #00a1ab 0%, #008a93 100%);
+            border-radius: 2px;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 161, 171, 0.2);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 161, 171, 0.4);
+        }
+
+        /* Horizontal scrolling for mobile */
+        @media (max-width: 1023px) {
+            .horizontal-scroll-container {
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .horizontal-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .horizontal-scroll-content {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .horizontal-card {
+                flex: 0 0 auto;
+                width: 320px;
+            }
+        }
+
+        /* Mobile navigation */
+        .ham-icon {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            margin-left: 15px;
+            background: transparent;
+            border: none;
+        }
+
+        .ham-icon span {
+            width: 28px;
+            height: 3px;
+            background: #002c5f;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .ham-icon.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+            background: #00a1ab;
+        }
+
+        .ham-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .ham-icon.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+            background: #00a1ab;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 320px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                gap: 0;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+                transition: right 0.3s ease;
+                z-index: 1001;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 16px;
+                padding: 15px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .ham-icon {
+                display: flex;
+                z-index: 1002;
+            }
+
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .hero-section {
+                padding-top: 80px;
+            }
+
+            .language-selector-simple {
+                margin: 20px 0 0 0;
+                width: 100%;
+            }
+
+            .language-selector-simple select {
+                width: 100%;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Scroll animation classes */
+        .scroll-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Stats animation */
+        .count-up {
+            display: inline-block;
+        }
+
+        /* Section backgrounds */
+        .section-light {
+            background-color: #ffffff;
+        }
+
+        .section-dark {
+            background-color: #f8f9fa;
+        }
+
+        /* Image styling */
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card title center alignment */
+        .modal-title-center {
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Card content styling */
+        .card-content {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hide horizontal scrollbar */
+        body {
+            overflow-y: scroll;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Remove any extra scroll areas */
+        .horizontal-scroll-container {
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .horizontal-scroll-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                overflow: visible;
+            }
+            
+            .horizontal-card {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- Language Translation Script from index.html -->
+    <script>
+        (function () {
+            "use strict";
+
+            const MAP = {
+                // Western / English variants
+                "en": "en", "en-gb": "en", "en-ke": "en", "en-ug": "en", "en-gh": "en",
+                "en-zm": "en", "en-mu": "en", "en-sl": "en", "en-ng": "en",
+                // French (Cameroon)
+                "fr-cm": "fr",
+                // Arabic variants
+                "ar": "ar", "ar-ly": "ar", "ar-sd": "ar", "ar-kw": "ar", "ar-sa": "ar",
+                "ar-sy": "ar", "ar-iq": "ar", "ar-om": "ar", "ar-jo": "ar", "ar-ye": "ar",
+                // Africa / others
+                "am": "am",      // Amharic
+                "sw": "sw",      // Swahili
+                "mg": "mg",      // Malagasy
+                // CIS
+                "uz": "uz", "kk": "kk", "tk": "tk", "tg": "tg",
+                // Asia
+                "my": "my",      // Burmese
+                "km": "km",      // Khmer
+                "bn": "bn",      // Bengali
+                "ne": "ne",      // Nepali
+                "hi": "hi",      // Hindi
+                "in": "in",      // Hindi (not supported) -> fallback English
+                "dz": "en",      // Dzongkha (not supported) -> fallback English
+                "si": "si",      // Sinhala
+                // Americas (map regional Spanish/Portuguese to base)
+                "es-mx": "es", "es-co": "es", "es-pe": "es", "es-do": "es",
+                "pt-br": "pt"
+            };
+
+            // 2) Init Google element (runs after their script loads)
+            window.googleTranslateElementInit = function () {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',                 // your site source language
+                    includedLanguages: uniqueValues(MAP), // allow only languages from map
+                    autoDisplay: false
+                }, 'google_translate_element');
+
+                // Apply saved language choice (or default to 'en')
+                const saved = getSavedLang();
+                setLanguage(saved, /*reload*/ false);
+
+                // Sync dropdown to saved value if the <select> exists now
+                const select = document.getElementById('languageSelect');
+                if (select) {
+                    select.value = saved in MAP ? saved : 'en';
+                    select.addEventListener('change', function () { setLanguage(this.value); });
+                }
+            };
+
+            // 3) Switch language by cookie (what Google widget reads)
+            function setLanguage(appValue, reload = true) {
+                const tgt = MAP[appValue] || "en";
+                setHtmlLangDir(tgt);
+                localStorage.setItem("lang", appValue);
+
+                // Set googtrans cookie for both current host and dot-domain (covers subpaths)
+                const cookieVal = "/auto/" + tgt;
+                const exp = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+                document.cookie = "googtrans=" + cookieVal + "; expires=" + exp + "; path=/";
+                document.cookie = "googtrans=" + cookieVal + "; expires=" + exp + "; path=/; domain=" + location.hostname;
+
+                // Force re-render so Google applies translation consistently
+                if (reload) location.reload();
+            }
+
+            function setHtmlLangDir(code) {
+                document.documentElement.lang = code;
+                const rtl = new Set(["ar", "he", "fa", "ur"]);
+                document.documentElement.dir = rtl.has(code) ? "rtl" : "ltr";
+            }
+
+            function getSavedLang() {
+                const saved = localStorage.getItem("lang");
+                return (saved && (saved in MAP)) ? saved : "en";
+            }
+
+            function uniqueValues(obj) {
+                // Collect unique target codes once (Google expects a comma list string but array is fine here)
+                return Array.from(new Set(Object.values(obj))).join(',');
+            }
+
+            // 4) If header select is created later (e.g., templated), attach once it exists
+            document.addEventListener('DOMContentLoaded', () => {
+                const select = document.getElementById('languageSelect');
+                if (select) {
+                    const saved = getSavedLang();
+                    select.value = saved in MAP ? saved : 'en';
+                    select.addEventListener('change', function () { setLanguage(this.value); });
+                }
+            });
+
+            // 5) Load Google's script (async)
+            const s = document.createElement('script');
+            s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            s.defer = true;
+            document.head.appendChild(s);
+        })();
+    </script>
+</head>
+<body class="font-inter">
+
+    <!-- Hidden container Google needs -->
+    <div id="google_translate_element" style="display:none"></div>
+
+    <!-- Header from index.html with language selector -->
+    <header class="glass-header">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpeg" alt="Gods Life Health Care" style="border-radius: 30px;" />
+                <div class="logo-text">God's <span>Life Health Care</span></div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="hospitals.html" class="nav-link">Hospital</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="doctor.html" class="nav-link">Doctors</a>
+                <a href="blog/Blog.html" class="nav-link">Blog</a>
+                
+                <button class="btn btn-glow">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Consultation</span>
+                </button>
+
+                <div class="language-selector-simple">
+                    <select id="languageSelect">
+                        <!-- Africa -->
+                        <optgroup label="Africa">
+                            <option value="en-ke">🇰🇪 Kenya</option>
+                            <option value="fr-cm">🇨🇲 Cameroon</option>
+                            <option value="am">🇪🇹 Ethiopia</option>
+                            <option value="en-ug">🇺🇬 Uganda</option>
+                            <option value="en-gh">🇬🇭 Ghana</option>
+                            <option value="en-zm">🇿🇲 Zambia</option>
+                            <option value="sw">🇹🇿 Tanzania</option>
+                            <option value="en-mu">🇲🇺 Mauritius</option>
+                            <option value="mg">🇲🇬 Madagascar</option>
+                            <option value="en-sl">🇸🇱 S. Leone</option>
+                            <option value="ar-ly">🇱🇾 Libya</option>
+                            <option value="ar-sd">🇸🇩 Sudan</option>
+                            <option value="en-ng">🇳🇬 Nigeria</option>
+                        </optgroup>
+
+                        <!-- Middle East -->
+                        <optgroup label="Middle East">
+                            <option value="ar-kw">🇰🇼 Kuwait</option>
+                            <option value="ar-sa">🇸🇦 Saudi</option>
+                            <option value="ar-sy">🇸🇾 Syria</option>
+                            <option value="ar-iq">🇮🇶 Iraq</option>
+                            <option value="ar-om">🇴🇲 Oman</option>
+                            <option value="ar-jo">🇯🇴 Jordan</option>
+                            <option value="ar-ye">🇾🇪 Yemen</option>
+                        </optgroup>
+
+                        <!-- CIS Countries -->
+                        <optgroup label="CIS">
+                            <option value="uz">🇺🇿 Uzbek</option>
+                            <option value="kk">🇰🇿 Kazakh</option>
+                            <option value="tk">🇹🇲 Turkmen</option>
+                            <option value="tg">🇹🇯 Tajik</option>
+                        </optgroup>
+
+                        <!-- Asia -->
+                        <optgroup label="Asia">
+                            <option value="my">🇲🇲 Myanmar</option>
+                            <option value="km">🇰🇭 Cambodia</option>
+                            <option value="bn">🇧🇩 Bangladesh</option>
+                            <option value="ne">🇳🇵 Nepal</option>
+                            <option value="dz">🇧🇹 Bhutan</option>
+                            <option value="si">🇱🇰 Sri Lanka</option>
+                            <option value="hi">🇮🇳 India</option>
+                        </optgroup>
+
+                        <!-- Americas -->
+                        <optgroup label="Americas">
+                            <option value="es-mx">🇲🇽 Mexico</option>
+                            <option value="es-co">🇨🇴 Colombia</option>
+                            <option value="pt-br">🇧🇷 Brazil</option>
+                            <option value="es-pe">🇵🇪 Peru</option>
+                            <option value="es-do">🇩🇴 Dom. Rep</option>
+                        </optgroup>
+
+                        <!-- Western -->
+                        <optgroup label="Western">
+                            <option value="en" selected>🇺🇸 US</option>
+                            <option value="en-gb">🇬🇧 UK</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </nav>
+
+            <div class="ham-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section from doc.html -->
+    <div class="hero-section relative flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8 min-h-[95vh]">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('dockback1.png');"></div>
+        <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Section: Text Content and Buttons -->
+            <div class="text-center lg:text-left scroll-fade-in">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-4">
+                    Your Health <br> Deserves the right <span class="italic font-normal text-primary-color">specialist</span>
+                </h1>
+                <p class="text-lg text-gray-700 max-w-md mx-auto lg:mx-0 mb-8">
+                    Connect with top rated doctors who listen and prioritize your health journey
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                    <button class="bg-secondary-color text-white font-medium py-3 px-6 rounded-full flex items-center shadow-lg hover:bg-opacity-90 transition duration-300 w-full sm:w-auto justify-center">
+                        <i class="fas fa-search mr-2"></i>
+                        Find a Doctor
+                    </button>
+                    <button class="bg-white text-gray-800 font-medium py-3 px-6 rounded-full flex items-center border border-gray-300 shadow-md hover:bg-gray-50 transition duration-300 w-full sm:w-auto justify-center">
+                        How It Works
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Feature Cards (Bottom Left) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+                    <div class="scroll-fade-in-left">
+                        <h3 class="text-xl font-semibold text-secondary-color mb-2">Free Checkup</h3>
+                        <p class="text-gray-600 text-base">Comprehensive evaluation with no upfront costs. Limited time offer.</p>
+                    </div>
+                    <div class="scroll-fade-in-right">
+                        <h3 class="text-xl font-semibold text-secondary-color mb-2">Custom Treatment Plan</h3>
+                        <p class="text-gray-600 text-base">From diagnosis to recovery, we map every step for your unique needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Doctor Image and Floating Cards -->
+            <div class="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+                <!-- Main Doctor Image -->
+                <div class="doctor-image-container relative h-full w-full flex justify-center items-end">
+                    <img src="" alt="" class="doctor-img1 w-full h-auto object-contain object-center-bottom max-w-full opacity-0">
+                        
+                    <!-- Overlay Card 1 (Patients Joined) -->
+                    <div class="overlay-card patients-joined absolute bg-white rounded-xl shadow-card p-4 z-20 max-w-[280px] lg:bottom-2/5 lg:-left-5 lg:w-72 scroll-fade-in">
+                        <div class="flex justify-center -space-x-2 mb-2">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 1" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 2" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 3" class="w-10 h-10 rounded-full border-2 border-white">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-xs font-bold text-blue-700">30M+</div>
+                        </div>
+                        <p class="text-sm text-gray-700 font-medium leading-snug">Join millions who found the right doctor for their unique health needs.</p>
+                    </div>
+
+                    <!-- Overlay Card 2 (Medical History) -->
+                    <div class="overlay-card medical-history absolute bg-white rounded-xl shadow-card p-4 z-20 max-w-[280px] lg:-bottom-60 lg:left-10 lg:w-64 scroll-fade-in-left">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-medical text-gray-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700">Your full medical history</p>
+                                <p class="text-xs text-gray-500 leading-snug">available to every clinician</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlay Card 3 (Virtual Care Team) -->
+                    <div class="overlay-card virtual-care absolute bg-white rounded-xl shadow-card p-4 z-20 max-w-[280px] lg:-top-1 lg:-right-16 lg:w-72 scroll-fade-in-right">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Small Doctor Avatar" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700">24/7 Virtual Care Team at Your Service</p>
+                                <p class="text-xs text-gray-500 leading-snug mt-1">Board certified doctors available anytime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-8">
+        <!-- Values Section -->
+        <section class="py-16 section-light scroll-fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold mb-4 text-secondary-color">We Set Your Medical Journey Apart</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Our core values drive everything we do, ensuring exceptional service delivery</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Medical Excellence -->
+                    <div class="service-card-medical p-8 text-center scroll-fade-in-left">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-star-of-life text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-secondary-color">Medical Excellence</h3>
+                        <p class="text-gray-600">
+                            We infuse every healthcare experience with our in-depth medical expertise, seamlessly blending advanced technology with compassionate care for unparalleled patient outcomes.
+                        </p>
+                    </div>
+                    
+                    <!-- Accountability -->
+                    <div class="service-card-medical p-8 text-center scroll-fade-in">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-secondary-color">Accountability</h3>
+                        <p class="text-gray-600">
+                            We take ownership by meticulously delivering outcomes in all our practices and accountable actions, fostering a culture of reliability and transparency.
+                        </p>
+                    </div>
+                    
+                    <!-- Integrity -->
+                    <div class="service-card-medical p-8 text-center scroll-fade-in-right">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-secondary-color">Integrity</h3>
+                        <p class="text-gray-600">
+                            Integrity is at the core of our values, guiding every decision and action to ensure honesty, transparency, and trustworthiness in all our operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Medical Care & Support Services -->
+        <section class="py-16 section-light">
+            <div class="container mx-auto px-4 max-w-8xl">
+                <div class="section-header scroll-fade-in">
+                    <h2>Medical Care & Support Services</h2>
+                    <p class="text-gray-600 mt-4">Our Comprehensive Solutions for your healthcare journey</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+                    <!-- Left: Cards - taking 2/3 of the space -->
+                    <div class="lg:col-span-2">
+                        <!-- Horizontal Cards Container -->
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll-content lg:grid lg:grid-cols-3 lg:gap-6">
+                                <!-- Private Nursing -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-left" data-card="private-nursing">
+                                    <div class="service-icon">
+                                        <i class="fas fa-user-nurse text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Private Nursing</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Dedicated 24/7 nursing care with experienced medical professionals for personalized attention during recovery.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Private Doctor -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in" data-card="private-doctor">
+                                    <div class="service-icon">
+                                        <i class="fas fa-user-md text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Private Doctor</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Dedicated physician providing continuous care throughout your medical journey with personalized treatment coordination.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Second Opinion -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-right" data-card="second-opinion">
+                                    <div class="service-icon">
+                                        <i class="fas fa-stethoscope text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Second Opinion</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Expert medical consultations from top specialists to validate diagnosis and treatment plans for peace of mind.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Image - taking 1/3 of the space -->
+                    <div class="flex justify-center lg:justify-end scroll-fade-in-right">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Medical care and support services" 
+                             class="section-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Travel & Accommodation Services -->
+        <section class="py-16 section-dark">
+            <div class="container mx-auto px-4 max-w-8xl">
+                <div class="section-header scroll-fade-in">
+                    <h2>Travel & Accommodation Services</h2>
+                    <p class="text-gray-600 mt-4">Complete travel arrangements and comfortable stays for your medical journey</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+                    <!-- Left: Image - taking 1/3 of the space -->
+                    <div class="flex justify-center lg:justify-start order-2 lg:order-1 scroll-fade-in-left">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Travel and accommodation services" 
+                             class="section-image">
+                    </div>
+                    
+                    <!-- Right: Cards - 2/3 of the space -->
+                    <div class="lg:col-span-2 order-1 lg:order-2">
+                        <!-- Horizontal Cards Container -->
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll-content lg:grid lg:grid-cols-3 lg:gap-6">
+                                <!-- Accommodation -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-left" data-card="accommodation">
+                                    <div class="service-icon">
+                                        <i class="fas fa-hotel text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Accommodation</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Comfortable, fully-equipped apartments or hotel stays near medical facilities with patient-friendly amenities.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Visa Assistance -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in" data-card="visa-assistance">
+                                    <div class="service-icon">
+                                        <i class="fas fa-passport text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Visa Assistance</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Complete visa processing support including documentation, medical visa applications, and embassy coordination.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Air Ambulance -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-right" data-card="air-ambulance">
+                                    <div class="service-icon">
+                                        <i class="fas fa-plane text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Air Ambulance</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Fully-equipped medical air transport with ICU facilities and critical care specialists for safe patient transfer.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Hospital & Medical Coordination -->
+        <section class="py-16 section-light">
+            <div class="container mx-auto px-4 max-w-8xl">
+                <div class="section-header scroll-fade-in">
+                    <h2>Hospital & Medical Coordination</h2>
+                    <p class="text-gray-600 mt-4">Expert medical coordination and hospital management services</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+                    <!-- Left: Cards -taking 2/3 of the space -->
+                    <div class="lg:col-span-2">
+                        <!-- Horizontal Cards Container -->
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll-content lg:grid lg:grid-cols-3 lg:gap-6">
+                                <!-- Hospital Selection -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-left" data-card="hospital-selection">
+                                    <div class="service-icon">
+                                        <i class="fas fa-hospital text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Hospital Selection</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Expert guidance in choosing the best medical facility based on specialization, success rates, and patient reviews.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Medical Devices -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in" data-card="medical-devices">
+                                    <div class="service-icon">
+                                        <i class="fas fa-lungs text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Medical Devices</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Provision of essential medical equipment including ventilators, monitors, and specialized home care devices.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Interpreter Services -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-right" data-card="interpreter">
+                                    <div class="service-icon">
+                                        <i class="fas fa-language text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Interpreter Services</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Professional medical interpreters for clear communication between patients and healthcare providers in multiple languages.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Image - taking 1/3 of the space -->
+                    <div class="flex justify-center lg:justify-end scroll-fade-in-right">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Hospital coordination services" 
+                             class="section-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Post-Treatment & Recovery Services -->
+        <section class="py-16 section-dark">
+            <div class="container mx-auto px-4 max-w-8xl">
+                <div class="section-header scroll-fade-in">
+                    <h2>Post-Treatment & Recovery Services</h2>
+                    <p class="text-gray-600 mt-4">Comprehensive follow-up care and recovery support services</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+                    <!-- Left: Image - taking 1/3 of the space -->
+                    <div class="flex justify-center lg:justify-start order-2 lg:order-1 scroll-fade-in-left">
+                        <img src="https://images.unsplash.com/photo-1584467735871-8db9ac8cc1b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Post-treatment recovery services" 
+                             class="section-image">
+                    </div>
+                    
+                    <!-- Right: Cards - taking 2/3 of the space -->
+                    <div class="lg:col-span-2 order-1 lg:order-2">
+                        <!-- Horizontal Cards Container -->
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll-content lg:grid lg:grid-cols-2 lg:gap-6">
+                                <!-- Discharge & Follow-up -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-left" data-card="discharge-followup">
+                                    <div class="service-icon">
+                                        <i class="fas fa-file-medical-alt text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Discharge & Follow-up</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Comprehensive discharge planning and post-treatment care coordination including rehabilitation and monitoring.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+
+                                <!-- Local Tour & Recreation -->
+                                <div class="service-card-medical p-5 rounded-xl flex flex-col items-start space-y-3 horizontal-card expanding-card scroll-fade-in-right" data-card="local-tour">
+                                    <div class="service-icon">
+                                        <i class="fas fa-map-marked-alt text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-800 text-center w-full">Local Tour & Recreation</h4>
+                                    <p class="text-gray-600 text-sm flex-1 text-center">
+                                        Customized sightseeing and recreational activities suitable for recovering patients and companions.
+                                    </p>
+                                    <button class="learn-more-btn text-primary-color text-sm font-semibold hover:underline mt-4">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 border-t border-gray-200 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-fade-in-left">
+                        <div class="grid grid-cols-2 gap-8 mb-8">
+                            <div class="text-center">
+                                <div class="text-5xl font-extrabold text-primary-color count-up" data-target="280">0</div>
+                                <div class="text-sm uppercase tracking-wider text-gray-600 mt-2">MEDICAL JOURNEYS</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-extrabold text-primary-color count-up" data-target="3000">0</div>
+                                <div class="text-sm uppercase tracking-wider text-gray-600 mt-2">SATISFIED PATIENTS</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We are dedicated to consistently providing our patients with top-notch medical tourism solutions that are tailored to their specific healthcare needs. Our expertise spans a wide range of medical services, and we offer a comprehensive portfolio of healthcare solutions to help you achieve your health goals.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Always committed to providing excellent medical tourism services with compassion, transparency, and world-class quality.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center scroll-fade-in-right">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                              alt="Medical team working together" 
+                              class="w-full max-w-lg h-auto rounded-lg shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Card Expansion Modal -->
+    <div class="modal-overlay" id="cardModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer from index.html -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column scroll-fade-in">
+                    <h3>Gods Life Health Care</h3>
+                    <p>Providing world-class medical tourism services with compassion and excellence.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column scroll-fade-in-left">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="hospitals.html">Hospitals</a></li>
+                        <li><a href="doctor.html">Doctors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column scroll-fade-in">
+                    <h3>Medical Services</h3>
+                    <ul>
+                        <li><a href="#">Cardiac Surgery</a></li>
+                        <li><a href="#">Orthopedic Surgery</a></li>
+                        <li><a href="#">Cosmetic Surgery</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                        <li><a href="#">Fertility Treatments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column scroll-fade-in-right">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>  18 East Azad Nagar near Krishna Nagar Delhi 110051</p>
+                    <p><i class="fas fa-phone"></i>  +91 70655 14010'</p>
+                    <p><i class="fas fa-envelope"></i>  support@godslifehealthcare.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright scroll-fade-in">
+                <p>&copy; 2025 Gods Life Health Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const hamIcon = document.querySelector('.ham-icon');
+            const navMenu = document.querySelector('.nav-menu');
+
+            function toggleMenu() {
+                navMenu.classList.toggle('active');
+                hamIcon.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            }
+
+            hamIcon.addEventListener('click', toggleMenu);
+
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.glass-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // Add animation classes for cards
+                        if (entry.target.classList.contains('service-card-medical')) {
+                            const cards = entry.target.closest('.grid').querySelectorAll('.service-card-medical');
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    if (index % 2 === 0) {
+                                        card.classList.add('animated-left');
+                                    } else {
+                                        card.classList.add('animated-right');
+                                    }
+                                }, index * 200);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with scroll animation classes
+            document.querySelectorAll('.scroll-fade-in, .scroll-fade-in-left, .scroll-fade-in-right, .service-card-medical').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Observe footer
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const footer = document.querySelector('footer');
+            footerObserver.observe(footer);
+
+            // Card content data
+            const cardContent = {
+                'private-nursing': {
+                    title: 'Private Nursing Services',
+                    icon: 'user-nurse',
+                    image: 'Private Nursing Services.jpg',
+                    description: 'Dedicated 24/7 nursing care with personalized attention and monitoring',
+                    details: [
+                        'Round-the-clock nursing care by experienced professionals',
+                        'Personalized care plans tailored to individual medical needs',
+                        'Medication management and administration',
+                        'Vital signs monitoring and reporting',
+                        'Wound care and dressing changes',
+                        'Assistance with daily living activities',
+                        'Emotional support and companionship',
+                        'Coordination with treating physicians'
+                    ],
+                    benefits: [
+                        'Faster recovery with personalized attention',
+                        'Peace of mind for patients and families',
+                        'Professional medical monitoring 24/7',
+                        'Reduced risk of hospital-acquired infections',
+                        'Comfort of receiving care in familiar surroundings'
+                    ]
+                },
+                'accommodation': {
+                    title: 'Medical Accommodation Services',
+                    icon: 'hotel',
+                    image: 'Medical Accommodation Services.jpg',
+                    description: 'Comfortable, fully-equipped accommodations near medical facilities',
+                    details: [
+                        'Patient-friendly apartments with medical accessibility',
+                        'Hotels near hospitals with shuttle services',
+                        'Fully furnished with kitchen facilities',
+                        'Housekeeping and laundry services',
+                        'Accessibility features for mobility challenges',
+                        'Family accommodation options',
+                        'Secure and monitored premises',
+                        'WiFi and entertainment facilities'
+                    ],
+                    benefits: [
+                        'Proximity to medical facilities',
+                        'Comfortable recovery environment',
+                        'Cost-effective compared to extended hospital stays',
+                        'Family-friendly accommodations',
+                        'Privacy and independence during recovery'
+                    ]
+                },
+                'second-opinion': {
+                    title: 'Medical Second Opinion Service',
+                    icon: 'stethoscope',
+                    image: 'Medical-Second-Opinion.jpg',
+                    description: 'Expert medical consultations to validate diagnosis and treatment plans',
+                    details: [
+                        'Consultation with top medical specialists',
+                        'Comprehensive review of medical records',
+                        'Detailed analysis of diagnosis and treatment options',
+                        'Written report with recommendations',
+                        'Follow-up consultation availability',
+                        'Coordination with primary physicians',
+                        'International specialist opinions',
+                        'Telemedicine consultation options'
+                    ],
+                    benefits: [
+                        'Confirmation of diagnosis and treatment plan',
+                        'Access to world-renowned specialists',
+                        'Peace of mind about medical decisions',
+                        'Potential discovery of alternative treatments',
+                        'Enhanced confidence in treatment approach'
+                    ]
+                },
+                'private-doctor': {
+                    title: 'Private Doctor Services',
+                    icon: 'user-md',
+                    image: 'Private Doctor Services.jpg',
+                    description: 'Dedicated physician providing continuous care throughout your medical journey',
+                    details: [
+                        'Assigned personal physician for duration of treatment',
+                        '24/7 availability for medical consultations',
+                        'Treatment coordination across all specialists',
+                        'Regular health monitoring and check-ups',
+                        'Medication management and adjustments',
+                        'Medical report preparation and explanation',
+                        'Communication bridge with hospital teams',
+                        'Post-treatment follow-up coordination'
+                    ],
+                    benefits: [
+                        'Consistent medical care throughout treatment',
+                        'Single point of contact for all medical concerns',
+                        'Personalized attention and care',
+                        'Better treatment coordination',
+                        'Enhanced patient-doctor relationship'
+                    ]
+                },
+                'interpreter': {
+                    title: 'Medical Interpreter Services',
+                    icon: 'language',
+                    image: 'Medical Interpreter Services.webp',
+                    description: 'Professional medical interpreters fluent in multiple languages',
+                    details: [
+                        'Certified medical interpreters in 50+ languages',
+                        '24/7 availability for medical consultations',
+                        'Medical terminology expertise',
+                        'Cultural sensitivity training',
+                        'Document translation services',
+                        'Video and phone interpretation options',
+                        'Confidentiality and privacy assurance',
+                        'Medical consent form translation'
+                    ],
+                    benefits: [
+                        'Clear communication with medical professionals',
+                        'Accurate understanding of diagnosis and treatment',
+                        'Cultural sensitivity in medical interactions',
+                        'Reduced risk of miscommunication',
+                        'Enhanced patient comfort and confidence'
+                    ]
+                },
+                'discharge-followup': {
+                    title: 'Discharge & Follow-up Care',
+                    icon: 'file-medical-alt',
+                    image: 'Discharge & Follow-up Care.png',
+                    description: 'Comprehensive discharge planning and post-treatment care coordination',
+                    details: [
+                        'Detailed discharge planning and instructions',
+                        'Medication schedule and management',
+                        'Rehabilitation and physiotherapy coordination',
+                        'Follow-up appointment scheduling',
+                        'Home care service arrangement',
+                        'Medical equipment provision and training',
+                        'Progress monitoring and reporting',
+                        'Emergency contact and support'
+                    ],
+                    benefits: [
+                        'Smooth transition from hospital to home',
+                        'Continuity of care after discharge',
+                        'Reduced readmission rates',
+                        'Proper medication adherence',
+                        'Ongoing recovery monitoring'
+                    ]
+                },
+                'medical-devices': {
+                    title: 'Medical Equipment Services',
+                    icon: 'lungs',
+                    image: 'Medical Equipment Services.jpg',
+                    description: 'State-of-the-art medical equipment including ventilators and specialized devices',
+                    details: [
+                        'Ventilators and respiratory support equipment',
+                        'Patient monitors and vital signs equipment',
+                        'Mobility aids and rehabilitation equipment',
+                        'Home dialysis equipment',
+                        'Infusion pumps and feeding tubes',
+                        'Diagnostic equipment provision',
+                        'Equipment installation and setup',
+                        '24/7 technical support and maintenance'
+                    ],
+                    benefits: [
+                        'Access to advanced medical technology',
+                        'Continuity of hospital-level care at home',
+                        'Professional equipment maintenance',
+                        'Training for proper equipment use',
+                        'Emergency technical support'
+                    ]
+                },
+                'visa-assistance': {
+                    title: 'Medical Visa Assistance',
+                    icon: 'passport',
+                    image: 'Medical Visa Assistance.webp',
+                    description: 'Complete visa processing support for medical travel',
+                    details: [
+                        'Medical visa documentation preparation',
+                        'Embassy appointment scheduling',
+                        'Application submission and follow-up',
+                        'Fast-track processing options',
+                        'Medical invitation letter arrangement',
+                        'Travel insurance coordination',
+                        'Visa extension assistance',
+                        'Multi-country visa coordination'
+                    ],
+                    benefits: [
+                        'Streamlined visa application process',
+                        'Expert guidance on medical visa requirements',
+                        'Faster processing times',
+                        'Reduced paperwork and hassle',
+                        'Higher visa approval rates'
+                    ]
+                },
+                'hospital-selection': {
+                    title: 'Hospital Selection Service',
+                    icon: 'hospital',
+                    image: 'Hospital Selection Service.jpg',
+                    description: 'Expert guidance in choosing the best medical facility for your treatment',
+                    details: [
+                        'JCI/NABH accredited hospital selection',
+                        'Specialist availability and success rate analysis',
+                        'Cost comparison and value assessment',
+                        'Patient reviews and satisfaction analysis',
+                        'Facility tour and virtual visits',
+                        'Treatment package negotiation',
+                        'Hospital reputation verification',
+                        'International hospital partnerships'
+                    ],
+                    benefits: [
+                        'Access to top-rated medical facilities',
+                        'Informed decision-making',
+                        'Cost-effective treatment options',
+                        'Quality assurance and accreditation',
+                        'Personalized hospital matching'
+                    ]
+                },
+                'air-ambulance': {
+                    title: 'Air Ambulance Services',
+                    icon: 'plane',
+                    image: 'Air Ambulance Services.jpeg',
+                    description: 'Fully-equipped medical air transport with ICU facilities',
+                    details: [
+                        'ICU-equipped air ambulances',
+                        'Critical care specialists on board',
+                        'International patient transfer',
+                        'Ground ambulance coordination',
+                        'Medical escort services',
+                        'Emergency medical evacuation',
+                        'Cross-border medical clearance',
+                        'Family member accompaniment'
+                    ],
+                    benefits: [
+                        'Safe and comfortable medical transport',
+                        'Continuous medical care during travel',
+                        'Fast access to specialized treatment',
+                        'International transfer expertise',
+                        'Comprehensive travel medical support'
+                    ]
+                },
+                'local-tour': {
+                    title: 'Local Tour & Recreation Services',
+                    icon: 'map-marked-alt',
+                    image: 'Local Tour & Recreation Services.avif',
+                    description: 'Customized sightseeing and recreational activities for patients and companions',
+                    details: [
+                        'Accessible tour planning for recovering patients',
+                        'Medical support availability during tours',
+                        'Cultural and historical site visits',
+                        'Nature and relaxation activities',
+                        'Shopping and entertainment options',
+                        'Local cuisine experiences',
+                        'Transportation with medical facilities',
+                        'Companion-only tour options'
+                    ],
+                    benefits: [
+                        'Mental well-being during recovery',
+                        'Positive distraction from medical treatment',
+                        'Cultural immersion experience',
+                        'Quality time with companions',
+                        'Memorable travel experiences'
+                    ]
+                }
+            };
+
+            // Modal elements
+            const modalOverlay = document.getElementById('cardModal');
+            const modalBody = document.getElementById('modalBody');
+            const modalClose = document.getElementById('modalClose');
+
+            // Function to open modal with card content
+            function openCardModal(cardId) {
+                const content = cardContent[cardId];
+                if (!content) return;
+
+                modalBody.innerHTML = `
+                    <div class="p-8">
+                        <img src="${content.image}" alt="${content.title}" class="w-full h-64 object-cover rounded-lg mb-6">
+                        
+                        <div class="flex flex-col items-center mb-6">
+                            <div class="service-icon mb-4">
+                                <i class="fas fa-${content.icon} text-2xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-secondary-color modal-title-center">${content.title}</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 text-lg mb-6 text-center">${content.description}</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold mb-4 text-secondary-color">Service Details:</h4>
+                            <ul class="space-y-2">
+                                ${content.details.map(detail => `
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-primary-color mr-2 mt-1"></i>
+                                        <span class="text-gray-700">${detail}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                            <h4 class="text-xl font-semibold mb-4 text-secondary-color">Key Benefits:</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                ${content.benefits.map(benefit => `
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                        <span class="text-gray-700">${benefit}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center pt-6 border-t border-gray-200">
+                            <p class="text-gray-600">Ready to learn more about our ${content.title}?</p>
+                            <button class="btn btn-primary">
+                                Contact Us
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                // Show modal
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Function to close modal
+            function closeCardModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Add click event to all expanding cards
+            document.querySelectorAll('.expanding-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Don't trigger if clicking on the "Learn More" link
+                    if (e.target.classList.contains('learn-more-btn')) {
+                        e.stopPropagation();
+                    }
+                    
+                    const cardId = card.getAttribute('data-card');
+                    openCardModal(cardId);
+                });
+                
+                // Add click event to Learn More buttons
+                const learnMoreBtn = card.querySelector('.learn-more-btn');
+                if (learnMoreBtn) {
+                    learnMoreBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const cardId = card.getAttribute('data-card');
+                        openCardModal(cardId);
+                    });
+                }
+            });
+
+            // Close modal when clicking close button or overlay
+            modalClose.addEventListener('click', closeCardModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    closeCardModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    closeCardModal();
+                }
+            });
+
+            // Animated counter
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000;
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, 16);
+            }
+
+            // Initialize counters when in view
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        animateCounter(entry.target);
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.count-up').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>
